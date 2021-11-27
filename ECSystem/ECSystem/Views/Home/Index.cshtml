@@ -1,0 +1,391 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    body {
+        background: #eee
+    }
+
+    .ratings i {
+        color: orange;
+    }
+
+    .install span {
+        font-size: 12px
+    }
+
+    .col-md-4 {
+        margin-top: 27px
+    }
+
+    .money-color {
+        color: green !important;
+    }
+  
+</style>
+<script src="~/js/Products.js"></script>
+
+<script>
+    var SelectedProducts = [];
+    var ProdcuctsItems = [
+        {
+            "Id": "1",
+            "Category": "Desks",
+            "Price": "10",
+            "Name": "Desk 1",
+            "Image": "Desk1",
+            "ShortDes": "It is desk 1",
+            "Description": "It id desk one. Get offers",
+            "AvaliableQuantity": "5",
+            "ProductId": "d1",
+            "ProductCode": "001",
+            "Color": "red",
+            "ColorCode": "red"
+        },
+        {
+            "Id": "2",
+            "Category": "Desks",
+            "Price": "20",
+            "Name": "Desk 2",
+            "Image": "Desk2",
+            "ShortDes": "It is desk 2",
+            "Description": "It id desk two. Get offers",
+            "AvaliableQuantity": "15",
+            "ProductId": "d2",
+            "ProductCode": "002",
+            "Color": "green",
+            "ColorCode": "green"
+        },
+        {
+            "Id": "3",
+            "Category": "Desks",
+            "Price": "10",
+            "Name": "Desk 3",
+            "Image": "Desk3",
+            "ShortDes": "It is desk 3",
+            "Description": "It id desk three. Get offers",
+            "AvaliableQuantity": "5",
+            "ProductId": "d3",
+            "ProductCode": "003",
+            "Color": "blue",
+            "ColorCode": "blue"
+        },
+        {
+            "Id": "4",
+            "Category": "Desks",
+            "Price": "10",
+            "Name": "Desk 4",
+            "Image": "Desk4",
+            "ShortDes": "It is desk 4",
+            "Description": "It id desk four. Get offers",
+            "AvaliableQuantity": "5",
+            "ProductId": "d4",
+            "ProductCode": "004",
+            "Color": "yellow",
+            "ColorCode": "yellow"
+        },
+        {
+            "Id": "5",
+            "Category": "Chairs",
+            "Price": "10",
+            "Name": "Chair 1",
+            "Image": "Chair1",
+            "ShortDes": "It is chair 1",
+            "Description": "It id chair one. Get offers",
+            "AvaliableQuantity": "5",
+            "ProductId": "c1",
+            "ProductCode": "005",
+            "Color": "yellow",
+            "ColorCode": "yellow"
+        },
+        {
+            "Id": "6",
+            "Category": "Chairs",
+            "Price": "10",
+            "Name": "Chair 2",
+            "Image": "Chair2",
+            "ShortDes": "It is chair 2",
+            "Description": "It id chair two. Get offers",
+            "AvaliableQuantity": "5",
+            "ProductId": "c2",
+            "ProductCode": "006",
+            "Color": "yellow",
+            "ColorCode": "yellow"
+        },
+        {
+            "Id": "7",
+            "Category": "Chairs",
+            "Price": "10",
+            "Name": "Chair 3",
+            "Image": "Chair3",
+            "ShortDes": "It is chair 3",
+            "Description": "It id chair Three. Get offers",
+            "AvaliableQuantity": "5",
+            "ProductId": "c3",
+            "ProductCode": "007",
+            "Color": "yellow",
+            "ColorCode": "yellow"
+        },
+        {
+            "Id": "8",
+            "Category": "Chairs",
+            "Price": "10",
+            "Name": "Chair 4",
+            "Image": "Chair4",
+            "ShortDes": "It is Chair 4",
+            "Description": "It id chair four. Get offers",
+            "AvaliableQuantity": "5",
+            "ProductId": "c4",
+            "ProductCode": "008",
+            "Color": "yellow",
+            "ColorCode": "yellow"
+        },
+        {
+            "Id": "9",
+            "Category": "Tables",
+            "Price": "10",
+            "Name": "Table 1",
+            "Image": "Table1",
+            "ShortDes": "It is Table 1",
+            "Description": "It id table one. Get offers",
+            "AvaliableQuantity": "5",
+            "ProductId": "t1",
+            "ProductCode": "009",
+            "Color": "yellow",
+            "ColorCode": "yellow"
+        },
+        {
+            "Id": "10",
+            "Category": "Tables",
+            "Price": "10",
+            "Name": "Table 2",
+            "Image": "Table2",
+            "ShortDes": "It is Table 2",
+            "Description": "It id Table two. Get offers",
+            "AvaliableQuantity": "5",
+            "ProductId": "t2",
+            "ProductCode": "0010",
+            "Color": "yellow",
+            "ColorCode": "yellow"
+        },
+        {
+            "Id": "11",
+            "Category": "Tables",
+            "Price": "10",
+            "Name": "Table 3",
+            "Image": "Table3",
+            "ShortDes": "It is table 3",
+            "Description": "It id table three. Get offers",
+            "AvaliableQuantity": "5",
+            "ProductId": "t3",
+            "ProductCode": "0011",
+            "Color": "yellow",
+            "ColorCode": "yellow"
+        },
+        {
+            "Id": "12",
+            "Category": "Tables",
+            "Price": "10",
+            "Name": "Table 4",
+            "Image": "Table",
+            "ShortDes": "It is Table 4",
+            "Description": "It id Table four. Get offers",
+            "AvaliableQuantity": "5",
+            "ProductId": "t4",
+            "ProductCode": "0012",
+            "Color": "yellow",
+            "ColorCode": "yellow"
+        }
+    ];
+    // A $( document ).ready() block.
+    $(document).ready(function () {     
+        LoadProducts();
+    });
+    function LoadProducts() {
+        var html = "";
+        if ($("#Category").val() == "") {
+            for (var i = 0; i < ProdcuctsItems.length; i++) {
+                html = html + '<div class="col-md-4">';
+                html = html + '<div class="card p-3">';
+                html = html + '<div class="d-flex flex-row mb-3">';
+                if (ProdcuctsItems[i].Category == "Tables") {
+                    html = html + '<img src="https://www.ikea.com/us/en/images/products/lack-side-table-black__0836736_pe601411_s5.jpg?f=xxs" width="70">';
+                }
+                if (ProdcuctsItems[i].Category == "Chairs") {
+                    html = html + '<img src="https://m.media-amazon.com/images/I/81FpWH95VeL._SL1500_.jpg" width="70">';
+                }
+                if (ProdcuctsItems[i].Category == "Desks") {
+                    html = html + '<img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/home-office-desks-1600280380.png?crop=1.00xw:1.00xh;0,0&resize=980:*" width="70">';
+                }
+
+                html = html + '<div class="d-flex flex-column ml-2">';
+                html = html + '<span>' + ProdcuctsItems[i].Name + '</span>';
+                html = html + '<span class="text-black-50 money-color">Rs.' + ProdcuctsItems[i].Price + ' </span>';
+                html = html + '<span class="ratings">';
+                html = html + '<i class="fa fa-star"></i>';
+                html = html + '<i class="fa fa-star"></i>';
+                html = html + '<i class="fa fa-star"></i>';
+                html = html + '<i class="fa fa-star"></i>';
+                html = html + '</span>';
+                html = html + '</div>';
+                html = html + '</div>';
+                html = html + '<h6>' + ProdcuctsItems[i].Description + '.</h6>';
+                html = html + '<div class="d-flex justify-content-between install mt-3">';
+                var cont = "no";
+
+                for (var m = 0; m < SelectedProducts.length; m++) {
+
+                    if (SelectedProducts[m].ProductId == ProdcuctsItems[i].ProductId) {
+                        cont = "yes";
+                    }
+                }
+
+                if (cont == "no") {
+                    html = html + '<input type="button" class="btn-sm btn-primary" name=' + ProdcuctsItems[i].ProductId + ' id=' + ProdcuctsItems[i].ProductId + '  value="Add To Cart" onclick = "AddToCart(\'' + ProdcuctsItems[i].ProductId + '\')"/>';
+
+                }
+                else {
+                    html = html + '<input type="button" class="btn-sm btn-success" name=' + ProdcuctsItems[i].ProductId + ' id=' + ProdcuctsItems[i].ProductId + '  value="Add To Cart" onclick = "AddToCart(\'' + ProdcuctsItems[i].ProductId + '\')"/>';
+                }
+
+                html = html + '</div>';
+                html = html + '</div>';
+                html = html + '</div>';
+            }
+        }
+        else {
+            for (var i = 0; i < ProdcuctsItems.length; i++) {
+
+                if (ProdcuctsItems[i].Category == $("#Category").val()) {
+
+                    html = html + '<div class="col-md-4">';
+                    html = html + '<div class="card p-3">';
+                    html = html + '<div class="d-flex flex-row mb-3">';
+                    if (ProdcuctsItems[i].Category == "Tables") {
+                        html = html + '<img src="https://www.ikea.com/us/en/images/products/lack-side-table-black__0836736_pe601411_s5.jpg?f=xxs" width="70">';
+                    }
+                    if (ProdcuctsItems[i].Category == "Chairs") {
+                        html = html + '<img src="https://m.media-amazon.com/images/I/81FpWH95VeL._SL1500_.jpg" width="70">';
+                    }
+                    if (ProdcuctsItems[i].Category == "Desks") {
+                        html = html + '<img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/home-office-desks-1600280380.png?crop=1.00xw:1.00xh;0,0&resize=980:*" width="70">';
+                    }
+
+                    html = html + '<div class="d-flex flex-column ml-2">';
+                    html = html + '<span>' + ProdcuctsItems[i].Name + '</span>';
+                    html = html + '<span class="text-black-50 money-color">Rs.' + ProdcuctsItems[i].Price + ' </span>';
+                    html = html + '<span class="ratings">';
+                    html = html + '<i class="fa fa-star"></i>';
+                    html = html + '<i class="fa fa-star"></i>';
+                    html = html + '<i class="fa fa-star"></i>';
+                    html = html + '<i class="fa fa-star"></i>';
+                    html = html + '</span>';
+                    html = html + '</div>';
+                    html = html + '</div>';
+                    html = html + '<h6>' + ProdcuctsItems[i].Description + '.</h6>';
+                    html = html + '<div class="d-flex justify-content-between install mt-3">';
+                    var cont = "no";
+
+                    for (var m = 0; m < SelectedProducts.length; m++) {
+
+                        if (SelectedProducts[m].ProductId == ProdcuctsItems[i].ProductId) {
+                            cont = "yes";
+                        }
+                    }
+
+                    if (cont == "no") {
+                        html = html + '<input type="button" class="btn-sm btn-primary" name=' + ProdcuctsItems[i].ProductId + ' id=' + ProdcuctsItems[i].ProductId + '  value="Add To Cart" onclick = "AddToCart(\'' + ProdcuctsItems[i].ProductId + '\')"/>';
+
+                    }
+                    else {
+                        html = html + '<input type="button" class="btn-sm btn-success" name=' + ProdcuctsItems[i].ProductId + ' id=' + ProdcuctsItems[i].ProductId + '  value="Add To Cart" onclick = "AddToCart(\'' + ProdcuctsItems[i].ProductId + '\')"/>';
+                    }
+
+                    html = html + '</div>';
+                    html = html + '</div>';
+                    html = html + '</div>';
+                }
+            }
+        }
+       
+        const main = document.getElementById('productcontainer');
+        main.innerHTML = html;
+    }
+
+    function AddToCart(id) {
+      
+        var se = {
+            "ProductId":id
+        }
+        SelectedProducts.push(se);
+        var element = document.getElementById(""+id+"");
+        element.classList.remove("btn-primary");
+        element.classList.add("btn-success");
+        $("#" + id + "").val("Added To Cart");
+        $("#cartCount").text(SelectedProducts.length);
+    }
+
+    function MyCart() {
+        $("#myModal").modal('show');
+        var html = "";
+        var total = "0";
+        if (SelectedProducts.length > 0) {          
+            for (var i = 0; i < SelectedProducts.length; i++) {
+                var filearray = (ProdcuctsItems.filter(function (item) {
+                    return item.ProductId == SelectedProducts[i].ProductId;
+                }));
+
+                html = html + "<tr>";
+                html = html + "<td>" + filearray[0].Name + "</td>";
+                html = html + " <td>" + filearray[0].Price + "</td>";
+                html = html + "<td><input type='button' class='btn-sm btn-warning'  value='Remove From Cart' onclick='RemoveFromCart(\"" + filearray[0].ProductId + "\")'></td>";
+                html = html + "</tr>";
+                total = parseFloat(total) + parseFloat(filearray[0].Price);
+            }  
+            html = html + "<tr>";
+            html = html + "<td><strong>Total:</strong></td>";
+            html = html + "<td><strong> Rs. " + total+"</strong></td>";
+            html = html + "<td><input type='button' class='btn-sm btn-primary' name='Process' id='Process' value='Process For Buy' onclick='Process()'/></td>";
+            html = html + "</tr>";
+        }    
+        const main = document.getElementById('mycartbody');
+        main.innerHTML = html;        
+    }
+    function RemoveFromCart(ud) {     
+        for (i = 0; i < SelectedProducts.length; i++) {
+            if (SelectedProducts[i].ProductId == ud) {
+                SelectedProducts.splice(i, 1);
+                    i--;
+                }
+            }
+        MyCart();  
+        LoadProducts();
+    }
+
+</script>
+<div class="container">
+    <div class="container mt-5">
+    
+     </div>
+  </div>
+
+<div class="container">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="Category">Category</label>
+                    <select class="form-control" id="Category" name="Category" onchange="LoadProducts();">
+                        <option value="">All</option>
+                        <option value="Desks">Desks</option>
+                        <option value="Tables">Tables</option>
+                        <option value="Chairs">Chairs</option>
+                    </select>
+                </div>
+            </div>           
+        </div>
+        <div class="row" id="productcontainer">
+
+        </div>
+    </div>
+</div>
