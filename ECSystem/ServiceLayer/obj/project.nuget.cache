@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "tAoEAni0S06wWX+ATE16g6W0CsrbN5Fut/5cXGYaFpdrh9qTvyIhzOT03w+lF29plaDSrEeIhDb5bO1KAicSCA==",
   "success": true,
   "projectFilePath": "D:\\Task Project Suraj Goud\\My_ECS_System\\ECS_SystemEg\\ECSystem\\ServiceLayer\\ServiceLayer.csproj",
+=======
+  "dgSpecHash": "1i+opObopBPI7k/OxPTfm9vZCCf3oEWROHqYD3BVtXsScoH4SlIgJv6FqVv0Sym1t8h5V4kO/GHojLaoR6cc/A==",
+  "success": true,
+  "projectFilePath": "D:\\Task Project Suraj Goud\\ECSystem\\ServiceLayer\\ServiceLayer.csproj",
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966
   "expectedPackageFiles": [
     "C:\\Users\\Dell\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

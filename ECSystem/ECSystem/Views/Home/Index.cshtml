@@ -1,7 +1,34 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<<<<<<< HEAD
 <link href="~/css/Homesite.css" rel="stylesheet" />
+=======
+<style>
+    body {
+        background: #eee
+    }
+
+    .ratings i {
+        color: orange;
+    }
+
+    .install span {
+        font-size: 12px
+    }
+
+    .col-md-4 {
+        margin-top: 27px
+    }
+
+    .money-color {
+        color: green !important;
+    }
+  
+</style>
+<script src="~/js/Products.js"></script>
+
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966
 <script>
     var SelectedProducts = [];
     var ProdcuctsItems = [
@@ -302,7 +329,36 @@
         $("#cartCount").text(SelectedProducts.length);
     }
 
+<<<<<<< HEAD
 
+=======
+    function MyCart() {
+        $("#myModal").modal('show');
+        var html = "";
+        var total = "0";
+        if (SelectedProducts.length > 0) {          
+            for (var i = 0; i < SelectedProducts.length; i++) {
+                var filearray = (ProdcuctsItems.filter(function (item) {
+                    return item.ProductId == SelectedProducts[i].ProductId;
+                }));
+
+                html = html + "<tr>";
+                html = html + "<td>" + filearray[0].Name + "</td>";
+                html = html + " <td>" + filearray[0].Price + "</td>";
+                html = html + "<td><input type='button' class='btn-sm btn-warning'  value='Remove From Cart' onclick='RemoveFromCart(\"" + filearray[0].ProductId + "\")'></td>";
+                html = html + "</tr>";
+                total = parseFloat(total) + parseFloat(filearray[0].Price);
+            }  
+            html = html + "<tr>";
+            html = html + "<td><strong>Total:</strong></td>";
+            html = html + "<td><strong> Rs. " + total+"</strong></td>";
+            html = html + "<td><input type='button' class='btn-sm btn-primary' name='Process' id='Process' value='Process For Buy' onclick='Process()'/></td>";
+            html = html + "</tr>";
+        }    
+        const main = document.getElementById('mycartbody');
+        main.innerHTML = html;        
+    }
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966
     function RemoveFromCart(ud) {     
         for (i = 0; i < SelectedProducts.length; i++) {
             if (SelectedProducts[i].ProductId == ud) {

@@ -655,11 +655,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "D:\\Task Project Suraj Goud\\My_ECS_System\\ECS_SystemEg\\ECSystem\\ECSystem\\ECSystem.csproj",
       "projectName": "ECSystem",
       "projectPath": "D:\\Task Project Suraj Goud\\My_ECS_System\\ECS_SystemEg\\ECSystem\\ECSystem\\ECSystem.csproj",
       "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
       "outputPath": "D:\\Task Project Suraj Goud\\My_ECS_System\\ECS_SystemEg\\ECSystem\\ECSystem\\obj\\",
+=======
+      "projectUniqueName": "D:\\Task Project Suraj Goud\\ECSystem\\ECSystem\\ECSystem.csproj",
+      "projectName": "ECSystem",
+      "projectPath": "D:\\Task Project Suraj Goud\\ECSystem\\ECSystem\\ECSystem.csproj",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+      "outputPath": "D:\\Task Project Suraj Goud\\ECSystem\\ECSystem\\obj\\",
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -681,8 +689,13 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+<<<<<<< HEAD
             "D:\\Task Project Suraj Goud\\My_ECS_System\\ECS_SystemEg\\ECSystem\\ServiceLayer\\ServiceLayer.csproj": {
               "projectPath": "D:\\Task Project Suraj Goud\\My_ECS_System\\ECS_SystemEg\\ECSystem\\ServiceLayer\\ServiceLayer.csproj"
+=======
+            "D:\\Task Project Suraj Goud\\ECSystem\\ServiceLayer\\ServiceLayer.csproj": {
+              "projectPath": "D:\\Task Project Suraj Goud\\ECSystem\\ServiceLayer\\ServiceLayer.csproj"
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966
             }
           }
         }

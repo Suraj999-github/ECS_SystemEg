@@ -33,6 +33,7 @@ namespace ECSystem.Controllers
             }
                 return View(model);
         }
+<<<<<<< HEAD
         public IActionResult CorporateList()
         {
             return View();
@@ -55,6 +56,8 @@ namespace ECSystem.Controllers
         {
             return View();
         }
+=======
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966
         public IActionResult Index()
         {
             return View();

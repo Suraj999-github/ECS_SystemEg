@@ -56,6 +56,7 @@ D:\Task Project Suraj Goud\ECSystem\ECSystem\bin\Debug\net5.0\ServiceLayer.pdb
 D:\Task Project Suraj Goud\ECSystem\ECSystem\obj\Debug\net5.0\Razor\Views\Customers\AddCompany.cshtml.g.cs
 D:\Task Project Suraj Goud\ECSystem\ECSystem\bin\Debug\net5.0\Newtonsoft.Json.dll
 D:\Task Project Suraj Goud\ECSystem\ECSystem\bin\Debug\net5.0\Dapper.dll
+<<<<<<< HEAD
 D:\Task Project Suraj Goud\My_ECS_System\ECS_SystemEg\ECSystem\ECSystem\bin\Debug\net5.0\appsettings.Development.json
 D:\Task Project Suraj Goud\My_ECS_System\ECS_SystemEg\ECSystem\ECSystem\bin\Debug\net5.0\ServiceLayer.deps.json
 D:\Task Project Suraj Goud\My_ECS_System\ECS_SystemEg\ECSystem\ECSystem\bin\Debug\net5.0\ServiceLayer.runtimeconfig.json
@@ -121,3 +122,5 @@ D:\Task Project Suraj Goud\My_ECS_System\ECS_SystemEg\ECSystem\ECSystem\obj\Debu
 D:\Task Project Suraj Goud\My_ECS_System\ECS_SystemEg\ECSystem\ECSystem\obj\Debug\net5.0\Razor\Views\Customers\StudentsList.cshtml.g.cs
 D:\Task Project Suraj Goud\My_ECS_System\ECS_SystemEg\ECSystem\ECSystem\obj\Debug\net5.0\Razor\Views\Reports\OrderHistoryReport.cshtml.g.cs
 D:\Task Project Suraj Goud\My_ECS_System\ECS_SystemEg\ECSystem\ECSystem\obj\Debug\net5.0\Razor\Views\Reports\ProfitLossReport.cshtml.g.cs
+=======
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966

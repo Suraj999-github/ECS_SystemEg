@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "D:\\Task Project Suraj Goud\\My_ECS_System\\ECS_SystemEg\\ECSystem\\ServiceLayer\\ServiceLayer.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "D:\\Task Project Suraj Goud\\My_ECS_System\\ECS_SystemEg\\ECSystem\\ServiceLayer\\ServiceLayer.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
         "outputPath": "D:\\Task Project Suraj Goud\\My_ECS_System\\ECS_SystemEg\\ECSystem\\ServiceLayer\\obj\\",
+=======
+    "D:\\Task Project Suraj Goud\\ECSystem\\ServiceLayer\\ServiceLayer.csproj": {}
+  },
+  "projects": {
+    "D:\\Task Project Suraj Goud\\ECSystem\\ServiceLayer\\ServiceLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Task Project Suraj Goud\\ECSystem\\ServiceLayer\\ServiceLayer.csproj",
+        "projectName": "ServiceLayer",
+        "projectPath": "D:\\Task Project Suraj Goud\\ECSystem\\ServiceLayer\\ServiceLayer.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "D:\\Task Project Suraj Goud\\ECSystem\\ServiceLayer\\obj\\",
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

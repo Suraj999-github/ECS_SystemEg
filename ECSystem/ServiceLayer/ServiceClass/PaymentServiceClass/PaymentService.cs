@@ -42,12 +42,17 @@ namespace ServiceLayer.ServiceClass.PaymentServiceClass
         public ResponseCommon InsertPayment(RequestCommon req)
         {
             var rcommom = JsonConvert.SerializeObject(req.RequestedData);
+<<<<<<< HEAD
+=======
+           // var returndetail = JsonConvert.DeserializeObject<NeaPaymentDetail>(rcommom);
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966
             try
             {
                 var c = new SqlConnection(configuration.GetConnectionString("ConnectionString:DefaultConnection"));
                 var sql = "EXEC SP_Payment ";
                 sql += "@Flag = " + "'insert'";              
                 sql += ",@RequestedData = " + filter.FilterString(rcommom);
+<<<<<<< HEAD
                 using (var connection = new SqlConnection(configuration["ConnectionString:DefaultConnection"]))
                 {                   
                     connection.Open();
@@ -56,6 +61,25 @@ namespace ServiceLayer.ServiceClass.PaymentServiceClass
                     connection.Close();
                 }
                 return response;               
+=======
+
+                using (var connection = new SqlConnection(configuration["ConnectionString:DefaultConnection"]))
+                {
+                    //connection.ConnectionString = "Data Source=DESKTOP-LN59I96;Initial Catalog=ECSSystem;Persist Security Info=True;User ID=sa;Password=MeroUat@321";
+                    connection.Open();
+                    var result = connection.Query<Result>(sql).ToArray();
+                    response.Result = result[0];
+                    //var res = new DbResponse(
+                    //res.ErrorCode = result[0].ErrorCode;
+                    //res.Id = result[0].Id;
+                    //res.Message = result[0].Message;
+                    //response. = res;
+                    connection.Close();
+                }
+                return response;
+
+               
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966
             }
             catch (Exception ex)
             {

@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - ECSystem</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+<<<<<<< HEAD
     <link href="~/css/Mastersheet.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -36,6 +37,42 @@
             const main = document.getElementById('mycartbody');
             main.innerHTML = html;
         }
+=======
+    <style>
+        .field-validation-error {
+            color: red;
+        }
+
+        span.badgex {
+            margin-top: -24px;
+            margin-left: -8px;
+            border-radius: 50%;
+            background: #e41e2d;
+            color: #fff;
+            padding: 0;
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .badgex {
+            display: inline-block;
+            min-width: 10px;
+            font-weight: 400;
+            white-space: nowrap;
+            vertical-align: middle;           
+        }
+        .fa-shopping-cart{
+            color:blue;
+        }
+      
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966
         function Process() {
             var buyingProducts = [];
             var total = "0";
@@ -45,6 +82,7 @@
                     return item.ProductId == SelectedProducts[i].ProductId;
                 }));
                 total = parseFloat(total) + parseFloat(filearray[0].Price);
+<<<<<<< HEAD
                 var p = {
                     "Id": filearray[0].Id,
                     "Category": filearray[0].Category,
@@ -58,6 +96,21 @@
                     "ProductCode": filearray[0].ProductCode,
                     "Color": filearray[0].Color,
                     "ColorCode": filearray[0].ColorCode,
+=======
+                 var p = {
+                     "Id": filearray[0].Id,
+                     "Category": filearray[0].Category,
+                     "Price": filearray[0].Price,
+                     "Name": filearray[0].Name,
+                     "Image": filearray[0].Image,
+                     "ShortDes": filearray[0].ShortDes,
+                     "Description": filearray[0].Description,
+                     "AvaliableQuantity": filearray[0].AvaliableQuantity,
+                     "ProductId": filearray[0].ProductId,
+                     "ProductCode": filearray[0].ProductCode,
+                     "Color": filearray[0].Color,
+                     "ColorCode": filearray[0].ColorCode,
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966
                 }
                 buyingProducts.push(p);
             }
@@ -65,10 +118,18 @@
                 BuyingProducts: buyingProducts,
                 TotalCost: total,
             }
+<<<<<<< HEAD
             $.ajax({
                 url: "/Payment/Payment",
                 type: "POST",
                 data: Data,
+=======
+            console.log(Data);
+            $.ajax({
+                url: "/Payment/Payment",
+                type: "POST",
+                data: Data,               
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966
                 beforeSend: function () {
                     $("#Process").val("Processing ...");
                     $("#Process").prop('disabled', 'true');
@@ -77,8 +138,13 @@
                     $("#Process").val("Process For Buy");
                     $("#Process").removeAttr('disabled');
                 },
+<<<<<<< HEAD
                 success: function (response) {
 
+=======
+                success: function (response) {   
+                    debugger;
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966
                     if (response.result.status == 0) {
                         alert(response.result.detail);
                         window.location.reload();
@@ -86,7 +152,11 @@
                     else {
                         alert("Transaction Failed");
                         window.location.reload();
+<<<<<<< HEAD
                     }
+=======
+                    }                                   
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966
                 },
                 error: function (response) {
                     alert("Transaction Failed");
@@ -105,13 +175,18 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+<<<<<<< HEAD
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+=======
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">                  
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966
                     <div class="dropdown">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                             Customers
                         </button>
                         <div class="dropdown-menu">
                             <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Customers" asp-action="AddCompany">Corporate Company</a>
+<<<<<<< HEAD
                             <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Customers" asp-action="CorporateList">Corporate List</a>
                             <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Customers" asp-action="HomeOffice">Home/Office</a>
                             <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Customers" asp-action="HomeOfficeList">Home/Office List</a>
@@ -126,6 +201,13 @@
                         <div class="dropdown-menu">
                             <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Reports" asp-action="ProfitLossReport">Profit/Loss Report</a>
                             <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Reports" asp-action="OrderHistoryReport">Order History Report</a>
+=======
+                            <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Customers" asp-action="AddCompany">Corporate List</a>
+                            <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Customers" asp-action="AddCompany">Home/Office</a>
+                            <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Customers" asp-action="AddCompany">Home/Office List</a>
+                            <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Customers" asp-action="AddCompany">Students</a>
+                            <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Customers" asp-action="AddCompany">Students List</a>
+>>>>>>> f78e806823a4e05f69278089bff51f228ccb9966
                         </div>
                     </div>
                     <ul>
